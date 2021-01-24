@@ -33,8 +33,6 @@ export default class Login extends Component {
         <View style={styles.buttonDiv} >
             <TouchableOpacity style={styles.button} onPress={()=>{
               if(this.state.pseudo.length != 0 && this.state.mdp.length != 0){
-                console.log('Name : ' + this.state.pseudo + ', MDP : ' + this.state.mdp)
-
                 let requestOptions = {
                   method: 'GET',
                   redirect: 'follow'
@@ -47,7 +45,7 @@ export default class Login extends Component {
                     if(json.error){
                       return
                     }else{
-                      this.props.isLogin(json.token)
+                      this.props.isLogin(json.token, json.Pseudo)
                     }
                   })
                   .catch(error => console.log('error', error))
