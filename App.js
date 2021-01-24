@@ -4,13 +4,17 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './component/login/login'
 
 export default class App extends Component {
+
+  state = {
+    token:null
+  }
+
   render(){
     return (
       <View style={styles.container}>
         <StatusBar style="auto"/>
-        <Login/>
+        {this.state.token == null ? <Login isLogin={(token)=>{this.setState({token:token})}}/> : <Text>{this.state.token}</Text>}
       </View>
-      
     )
   }
 }
