@@ -38,7 +38,7 @@ export default class Login extends Component {
                   redirect: 'follow'
                 }
 
-                fetch("http://localhost:81/api/login?Pseudo="+this.state.pseudo+"&Mdp="+this.state.mdp+"", requestOptions)
+                fetch("http://89.234.180.120:81/api/login?Pseudo="+this.state.pseudo+"&Mdp="+this.state.mdp+"", requestOptions)
                   .then(response => response.text())
                   .then((result) =>{
                     let json = JSON.parse(result)
